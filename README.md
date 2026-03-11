@@ -1,5 +1,3 @@
-# Projects developed while studying Harvard's CS50 Cybersecurity.
-
 # Secure Login System 
 
 A secure authentication system demonstrating cybersecurity concepts such as 
@@ -7,26 +5,30 @@ password hashing, salting, and brute-force protection.
 
 Developed while studying Harvard's CS50 Cybersecurity.
 
+---
+
 ## Demo
 
 User registration and login system with secure password storage.
 
 Example login attempt:
 
-Login failed
+Login failed  
 Attempts remaining: 2
 
-![login demo](images/login-demo.png)
+---
 
-User
- ↓
-Login Request
- ↓
-Password Hashing
- ↓
-Database Check
- ↓
-Authentication Result
+## Authentication Flow
+
+```mermaid
+flowchart TD
+A[User] --> B[Login Form]
+B --> C[Hash + Salt]
+C --> D[Database]
+D --> E[Authentication Result]
+```
+
+---
 
 ## Security Concepts Implemented
 
@@ -36,16 +38,20 @@ Authentication Result
 - Brute-force Protection
 - Secure Authentication Flow
 
-- ## Attack Scenario
+---
+
+## Attack Scenario
 
 Brute-force attacks attempt to guess passwords by trying many combinations.
 
-Example:
+Example passwords used in attacks:
 
-123456
-password
-qwerty
-admin123
+123456  
+password  
+qwerty  
+admin123  
+
+---
 
 ## Defense Mechanisms
 
@@ -56,19 +62,34 @@ This system implements:
 - Login attempt limits
 - Temporary account lockout
 
-- ## How to Run
+---
+
+## Project Structure
+
+```
+secure-login-system
+ ├── app.py
+ ├── users.json
+ └── README.md
+```
+
+---
+
+## How to Run
 
 Clone the repository:
 
+```
 git clone https://github.com/claricenunes/cs50-cybersecurity-projects
-
-Install dependencies:
-
-pip install -r requirements.txt
+```
 
 Run the application:
 
+```
 python app.py
+```
+
+---
 
 ## What I Learned
 
