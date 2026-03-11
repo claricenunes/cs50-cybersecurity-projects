@@ -22,13 +22,13 @@ Attempts remaining: 2
 
 ```mermaid
 flowchart TD
-A[User] --> B[Login Form]
-B --> C[Hash + Salt]
-C --> D[Database]
-D --> E[Authentication Result]
+A[User enters password] --> B[Add Salt]
+B --> C[Hash Password]
+C --> D[Compare with Stored Hash]
+D --> E{Match?}
+E -->|Yes| F[Login Success]
+E -->|No| G[Login Failed]
 ```
-
----
 
 ## Security Concepts Implemented
 
